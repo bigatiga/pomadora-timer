@@ -1,0 +1,18 @@
+name: check
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: chechout
+        uses: actions/checkout@v6
+      - name: install deps
+        run: npm ci
+      - name: lint
+        run: npm run lint
+
+      
